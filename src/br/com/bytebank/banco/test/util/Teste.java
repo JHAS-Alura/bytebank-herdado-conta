@@ -10,6 +10,7 @@ public class Teste {
 
 	public static void main(String[] args) {
 
+		//<  > = Generics
 		ArrayList<Conta> lista = new ArrayList<Conta>();
 		
 		Conta cc = new ContaCorrente(22, 11);
