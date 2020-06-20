@@ -3,7 +3,7 @@ package br.com.bytebank.banco.modelo;
 /**
  * Clase representa a moldura de uma conta 
  * 
- * @author João Santos
+ * @author Joï¿½o Santos
  *
  */
 
@@ -23,13 +23,13 @@ public abstract class Conta extends Object {
      */
     public Conta(int agencia, int numero){
     	if(agencia < 1) {
-    		throw new IllegalArgumentException("Agencia inválida");
+    		throw new IllegalArgumentException("Agencia invï¿½lida");
     	}
     	if(numero < 1) {
-    		throw new IllegalArgumentException("Numero da conta inválido");
+    		throw new IllegalArgumentException("Numero da conta invï¿½lido");
     	}
         Conta.total++;
-        //System.out.println("O total de contas é " + Conta.total);
+        //System.out.println("O total de contas ï¿½ " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
         //this.saldo = 100;
@@ -96,6 +96,19 @@ public abstract class Conta extends Object {
 
     public static int getTotal(){
         return Conta.total;
+    }
+    
+    @Override
+    public boolean equals(Object ref) {
+    	Conta outra = (Conta) ref;
+    	
+    	if(this.agencia != outra.agencia) {
+    		return false;
+    	}
+    	if(this.numero != outra.numero) {
+    		return false;
+    	}
+    	return true;
     }
 
     @Override
